@@ -14,15 +14,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:inputType="textPersonName"
-    android:text="Name"
-    android:ems="10"
+        android:ems="10"
     android:layout_alignParentTop="true"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:id="@+id/main_editText1"
     android:layout_alignParentRight="true"
     android:layout_alignParentEnd="true"
-    android:hint="请输入携带数据" />
+        android:hint="请输入需要携带的数据" />
 
     <Button
         android:text="启动新界面"
@@ -31,5 +30,16 @@
         android:layout_below="@+id/main_editText1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
-        android:id="@+id/main_button1" />
+        android:id="@+id/main_button1"
+        android:tag="1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_button2"
+        android:text="电话/短信"
+        android:tag="2"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/main_button1"
+        android:layout_alignEnd="@+id/main_button1" />
 </RelativeLayout>

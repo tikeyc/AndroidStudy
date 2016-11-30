@@ -21,28 +21,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView1 = (EditText) findViewById(R.id.main_editText1);
         //
         Button button1 = (Button) findViewById(R.id.main_button1);
+        Button button2 = (Button) findViewById(R.id.main_button2);
         //
         button1.setOnClickListener(this);
-
+        button2.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View view) {
 
-        Toast.makeText(this,"提示",Toast.LENGTH_LONG).show();
-        //一般启动界面
+
+        int tag = Integer.parseInt(view.getTag().toString());
+        Toast.makeText(this,"提示 " + tag,Toast.LENGTH_LONG).show();
+        switch (tag){
+            case 1:{
+                //一般启动界面
 //        Intent intent = new Intent(this,SecondActivity.class);
 //        intent.putExtra("main_message",textView1.getText().toString());
 //        startActivity(intent);
 
 
-        //带回调启动界面  Intent相当于一个信使，用于携带数据（携带一个Activity,一个字符串或其他类型的数据）
-        //安装操作系统中的ActivityManager类会自动管理和启动Activity和数据
-        Intent intent2 = new Intent(this,SecondActivity.class);
-        //设置传入的数据
-        intent2.putExtra("main_message",textView1.getText().toString());
-        int requestCode = 2;
-        startActivityForResult(intent2,requestCode);
+                //带回调启动界面  Intent相当于一个信使，用于携带数据（携带一个Activity,一个字符串或其他类型的数据）
+                //安装操作系统中的ActivityManager类会自动管理和启动Activity和数据
+                Intent intent2 = new Intent(this,SecondActivity.class);
+                //设置传入的数据
+                intent2.putExtra("main_message",textView1.getText().toString());
+                int requestCode = 2;
+                startActivityForResult(intent2,requestCode);
+                break;
+            }
+
+            case 2: {
+                Intent intent = new Intent(this,ThirdActivity.class);
+                startActivity(intent);
+                break;
+            }
+
+            default:
+                break;
+
+        }
+
+
+
     }
 
     /*
@@ -62,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     /*
-     *Activity 生命周期
+     *Activity 生命周期  与iOS中的viewController中的viewDidLoad,等类似
      * 界面从死亡--》运行
      *     创建对象--》onCreate()-->onStart()-->onResume()
      * 界面从运行--》死亡
