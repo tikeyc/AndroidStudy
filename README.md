@@ -1,6 +1,10 @@
 # AndroidStudy
 Android 开发学习
 
+Android studio Mac环境搭建
+http://www.androiddevtools.cn/     
+http://www.android-studio.org/
+
 学习笔记    
 常见异常：        
     1.NullPointerException  空指针（iOS我常称为 野指针）   
