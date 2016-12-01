@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_uistudy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tikeyc.androidstudy.UIStudyActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:text="UI使用"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/UIStudy_editText1"
+        android:hint="输入框" />
+
+    <Button
+        android:text="提示信息"
+        android:layout_width="103dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/UIStudy_button1" />
+
+    <!--app:srcCompat="@mipmap/ic_launcher"-->
+    <ImageView
+        android:layout_width="102dp"
+        android:layout_height="83dp"
+        android:id="@+id/UIStudy_imageView1"
+        android:background="@color/colorPrimaryDark"
+        android:src="@android:drawable/btn_star"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <CheckBox
+            android:text="iOS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_checkBox1 "
+            android:layout_weight="0.06" />
+
+        <CheckBox
+            android:text="Android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_checkBox2"
+            android:layout_weight="0.21" />
+
+        <CheckBox
+            android:text="JAVA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_checkBox3"
+            android:layout_weight="0.06" />
+
+        <Button
+            android:text="确定"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_button3"
+            android:layout_weight="0.06" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/UIStudy_RadioGroup1">
+
+        <RadioButton
+            android:text="支付宝"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_radioButton1"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="微信"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_radioButton2"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Apple Pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/UIStudy_radioButton3"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <Button
+        android:text="尝试点击手机底部menu或长按此处显示菜单"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/UIStudy_button4"
+        android:textSize="14sp" />
+
+</LinearLayout>

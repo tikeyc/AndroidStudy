@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tikeyc.androidstudy">
 
-    <!--添加APP的相关权限<uses-permission android:name="android.permission.对应的权限标识"/>-->
-    <!--添加拨打电话权限-->
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <!--添加发送短信权限-->
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!-- 添加APP的相关权限<uses-permission android:name="android.permission.对应的权限标识"/> -->
+    <!-- 添加拨打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 添加发送短信权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -15,10 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         /*//android:launchMode="singleTop"
-        *standard 普通每次创建新的Acticity对象
-        *singleTop 顶部单例：当当前Acticity位于栈的顶部（即当前显示的界面）点击startActivity将不在创建直接显示在栈顶
-        *singleTask 只有一个实例，单例
-        *singleInstance 点击startActivity将创建一个新的栈 用于存放当前要启动的Activity
+        *standard 普通：当启动startActivity该Acticity每次创建新的Acticity对象
+        *singleTop 顶部单例：当当前Acticity位于栈的顶部（即当前显示的界面）当启动startActivity该Acticity将不在创建直接显示在栈顶
+        *singleTask 当启动startActivity该Acticity只有一个实例，单例
+        *singleInstance 当启动startActivity该Acticity将创建一个新的栈 用于存放当前要启动的Activity
         */
         <activity
             android:name=".MainActivity"
@@ -32,7 +32,9 @@
         <activity android:name=".SecondActivity">
             /*android:launchMode="singleTask"*/
         </activity>
-        <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".ThirdActivity" />
+        <activity android:name=".LearningNoteActivity" />
+        <activity android:name=".UIStudyActivity"></activity>
     </application>
 
 </manifest>

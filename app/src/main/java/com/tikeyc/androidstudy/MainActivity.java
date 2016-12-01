@@ -18,6 +18,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //
+        initView();
+    }
+
+    /*
+     *Activity 生命周期  与iOS中的viewController中的viewDidLoad,等类似
+     * 界面从死亡--》运行
+     *     创建对象--》onCreate()-->onStart()-->onResume()
+     * 界面从运行--》死亡
+     *     onPause()-->onStop()-->onDestory()
+     * 界面从停止--》运行
+     *     onRestart()-->onStart()-->onResume()
+     * 界面从运行--》暂停
+     *     onPause()
+     * 界面从暂停--》运行
+     *     onResume()
+     */
+
+    @Override
+    protected void onStart() {
+
+        Log.e("TAG","onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.e("TAG","onResume");
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.e("TAG","onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.e("TAG","onRestart");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.e("TAG","onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.e("TAG","onResume");
+        super.onDestroy();
+    }
+
+
+    ////////////////////////////////////////init
+
+    public void initView(){
         textView1 = (EditText) findViewById(R.id.main_editText1);
         //
         Button button1 = (Button) findViewById(R.id.main_button1);
@@ -25,8 +84,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
+
+        //UI
+        Button button3 = (Button) findViewById(R.id.main_button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,UIStudyActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
+    ////////////////////////////////////////Actions Method
 
     @Override
     public void onClick(View view) {
@@ -83,56 +153,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    /*
-     *Activity 生命周期  与iOS中的viewController中的viewDidLoad,等类似
-     * 界面从死亡--》运行
-     *     创建对象--》onCreate()-->onStart()-->onResume()
-     * 界面从运行--》死亡
-     *     onPause()-->onStop()-->onDestory()
-     * 界面从停止--》运行
-     *     onRestart()-->onStart()-->onResume()
-     * 界面从运行--》暂停
-     *     onPause()
-     * 界面从暂停--》运行
-     *     onResume()
-     */
-
-    @Override
-    protected void onStart() {
-
-        Log.e("TAG","onStart");
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        Log.e("TAG","onResume");
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.e("TAG","onPause");
-        super.onPause();
-    }
-
-    @Override
-    protected void onRestart() {
-        Log.e("TAG","onRestart");
-        super.onRestart();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.e("TAG","onStop");
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.e("TAG","onResume");
-        super.onDestroy();
-    }
 
 }
 
