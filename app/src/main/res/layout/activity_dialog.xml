@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tikeyc.androidstudy.DialogActivity">
+
+    <Button
+        android:text="显示一般的AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:id="@+id/Dialog_button1"
+        android:onClick="showAlertDialog" />
+
+    <Button
+        android:text="显示单选列表AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Dialog_button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Dialog_button2"
+        android:onClick="showAlertDialog" />
+
+
+    <Button
+        android:text="显示自定义AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Dialog_button2"
+        android:layout_alignLeft="@+id/Dialog_button2"
+        android:layout_alignStart="@+id/Dialog_button2"
+        android:layout_marginTop="21dp"
+        android:id="@+id/Dialog_button3"
+        android:onClick="showAlertDialog" />
+
+    <Button
+        android:text="显示TimePickerDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dialog_button7"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/Dialog_button6"
+        android:layout_alignStart="@+id/Dialog_button6"
+        android:onClick="showAlertDialog" />
+
+    <Button
+        android:text="显示圆形进度ProgressDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dialog_button4"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/Dialog_button3"
+        android:layout_alignLeft="@+id/Dialog_button3"
+        android:layout_alignStart="@+id/Dialog_button3"
+        android:onClick="showAlertDialog" />
+
+    <Button
+        android:text="显示水平进度ProgressDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dialog_button5"
+        android:layout_below="@+id/Dialog_button4"
+        android:layout_alignLeft="@+id/Dialog_button4"
+        android:layout_alignStart="@+id/Dialog_button4"
+        android:onClick="showAlertDialog" />
+
+    <Button
+        android:text="显示DatePickerDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dialog_button6"
+        android:layout_above="@+id/Dialog_button7"
+        android:layout_alignLeft="@+id/Dialog_button5"
+        android:layout_alignStart="@+id/Dialog_button5"
+        android:onClick="showAlertDialog" />
+</RelativeLayout>

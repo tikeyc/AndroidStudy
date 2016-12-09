@@ -1,5 +1,6 @@
 package com.tikeyc.androidstudy;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -12,7 +13,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.RadioGroup;
 
@@ -125,6 +128,49 @@ public class UIStudyActivity extends AppCompatActivity {
         Button button4 = (Button) findViewById(R.id.UIStudy_button4);
         //长按显示
         button4.setOnCreateContextMenuListener(this);//Activity 已经实现了View.OnCreateContextMenuListener
+
+
+
+        /////////////////////////progressBar
+
+        final ProgressBar progressBar1 = (ProgressBar ) findViewById(R.id.UIStudy_progressBar1);
+        final ProgressBar progressBar2 = (ProgressBar ) findViewById(R.id.UIStudy_progressBar2);
+        SeekBar seekBar = (SeekBar) findViewById(R.id.UIStudy_seekBar);
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                progressBar1.setProgress(seekBar.getProgress());
+
+                if (seekBar.getProgress() == seekBar.getMax()){
+//                    progressBar2.setVisibility(View.INVISIBLE);//不可见，占据空间
+                    progressBar2.setVisibility(View.GONE);//不可见，不占据空间
+                }else {
+                    progressBar2.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        //////////////////////
+        Button goAlertDialog = (Button) findViewById(R.id.UIStudy_dialogButton);
+        goAlertDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UIStudyActivity.this,DialogActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

@@ -34,7 +34,8 @@
         </activity>
         <activity android:name=".ThirdActivity" />
         <activity android:name=".LearningNoteActivity" />
-        <activity android:name=".UIStudyActivity"></activity>
+        <activity android:name=".UIStudyActivity" />
+        <activity android:name=".DialogActivity"></activity>
     </application>
 
 </manifest>
