@@ -1,5 +1,6 @@
 package com.tikeyc.androidstudy;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.support.v7.app.AlertDialog;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -94,6 +96,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         });
+
+        //ListView
+        Button button4 = (Button) findViewById(R.id.main_button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String[] items = {"ArrayAdapter","SimpleAdapter","BaseAdapter"};
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("选择ListView Adapter类型")
+                        .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                switch (i){
+                                    case 0:{
+
+                                    }
+                                    break;
+                                    case 1:{
+
+                                    }
+                                    break;
+                                    case 2:{
+
+                                    }
+                                    break;
+                                    default:
+                                        break;
+                                }
+
+                                //
+                                Intent intent = new Intent(MainActivity.this,ListviewActivity.class);
+
+                                intent.putExtra("ListViewAdapterType",items[i]);
+
+                                startActivity(intent);
+                                //
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
     }
 
     ////////////////////////////////////////Actions Method
@@ -122,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
 
-            case 2: {
+            case 2: {//电话 短信
                 Intent intent = new Intent(this,ThirdActivity.class);
                 startActivity(intent);
                 break;

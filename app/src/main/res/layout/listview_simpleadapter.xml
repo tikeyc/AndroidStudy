@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        app:srcCompat="@android:drawable/star_on"
+        android:id="@+id/simpleAdapter_icon"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/simpleAdapter_icon"
+        android:layout_toRightOf="@+id/simpleAdapter_icon"
+        android:layout_toEndOf="@+id/simpleAdapter_icon"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:id="@+id/simpleAdapter_textView1" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/simpleAdapter_textView2"
+        android:layout_alignBottom="@+id/simpleAdapter_icon"
+        android:layout_alignLeft="@+id/simpleAdapter_textView1"
+        android:layout_alignStart="@+id/simpleAdapter_textView1" />
+</RelativeLayout>
