@@ -1,4 +1,10 @@
-package com.tikeyc.androidstudy;
+package com.tikeyc.androidstudy.ListAndGrid;
+
+import android.graphics.drawable.Drawable;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by public1 on 2016/12/9.
@@ -6,9 +12,12 @@ package com.tikeyc.androidstudy;
 
 public class ShopInfoModel {
 
+
     private int icon;
     private String name;
     protected String content;
+
+    private Drawable iconDraw;
 
     public int getIcon() {
         return icon;
@@ -34,12 +43,21 @@ public class ShopInfoModel {
         this.content = content;
     }
 
+    public Drawable getIconDraw() {
+        return iconDraw;
+    }
+
+    public void setIconDraw(Drawable iconDraw) {
+        this.iconDraw = iconDraw;
+    }
+
     @Override
     public String toString() {
         return "ShopInfoModel{" +
                 "icon=" + icon +
                 ", name='" + name + '\'' +
                 ", content='" + content + '\'' +
+                ", iconDraw=" + iconDraw +
                 '}';
     }
 }

@@ -29,14 +29,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- /*android:launchMode="singleTask"*/ -->
+        <!-- //设置主题 -->
         <activity android:name=".SecondActivity">
-            /*android:launchMode="singleTask"*/
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
         </activity>
         <activity android:name=".ThirdActivity" />
         <activity android:name=".LearningNoteActivity" />
         <activity android:name=".UIStudyActivity" />
         <activity android:name=".DialogActivity" />
-        <activity android:name=".ListviewActivity"></activity>
+        <activity android:name=".ListAndGrid.ListviewActivity" />
+        <activity android:name=".ListAndGrid.GridViewActivity"></activity>
     </application>
 
 </manifest>

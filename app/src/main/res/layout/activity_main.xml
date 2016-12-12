@@ -21,10 +21,11 @@
     android:id="@+id/main_editText1"
         android:hint="请输入需要携带的数据" />
 
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
     <Button
+        style="@style/myStyleTest"
         android:text="启动新界面"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/main_button1"
         android:tag="1"
         android:layout_marginRight="18dp"
@@ -33,9 +34,11 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--由values文件夹下的style/myStyleTest代替，称之为样式-->
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/myStyleTest"
         android:id="@+id/main_button2"
         android:text="电话/短信"
         android:tag="2"
@@ -50,19 +53,29 @@
         android:text="UI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_button2"
-        android:layout_alignLeft="@+id/main_button2"
-        android:layout_alignStart="@+id/main_button2"
-        android:layout_marginTop="14dp"
-        android:id="@+id/main_button3" />
+        android:id="@+id/main_button3"
+        android:layout_alignBaseline="@+id/main_button2"
+        android:layout_alignBottom="@+id/main_button2"
+        android:layout_toLeftOf="@+id/main_button1"
+        android:layout_toStartOf="@+id/main_button1" />
 
     <Button
         android:text="ListView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_button3"
-        android:layout_alignLeft="@+id/main_button3"
-        android:layout_alignStart="@+id/main_button3"
-        android:layout_marginTop="14dp"
-        android:id="@+id/main_button4" />
+        android:layout_marginTop="15dp"
+        android:id="@+id/main_button4"
+        android:layout_below="@+id/main_button2"
+        android:layout_alignLeft="@+id/main_button2"
+        android:layout_alignStart="@+id/main_button2" />
+
+    <Button
+        android:text="GridView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_button5"
+        android:layout_below="@+id/main_button4"
+        android:layout_alignLeft="@+id/main_button4"
+        android:layout_alignStart="@+id/main_button4"
+        android:layout_marginTop="18dp" />
 </RelativeLayout>

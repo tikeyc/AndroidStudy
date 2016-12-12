@@ -1,18 +1,25 @@
-package com.tikeyc.androidstudy;
+package com.tikeyc.androidstudy.ListAndGrid;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.tikeyc.androidstudy.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,8 +34,42 @@ public class ListviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listview);
 
 
+        initListView();
+    }
+
+    ////////////获取手机安装的APP
+    protected ArrayList<ShopInfoModel> getAllAppInfoModels(){
+
+        ArrayList<ShopInfoModel> shopInfoModels = new ArrayList<ShopInfoModel>();
+        //得到应用的packageManager
+        PackageManager packageManager = getPackageManager();
+        //创建一个主界面的intent
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        //得到包含应用信息的列表
+        List<ResolveInfo> resolveInfos = packageManager.queryIntentActivities(intent,0);
+        //遍历
+        for (ResolveInfo resolveInfo : resolveInfos){
+            //得到包名
+            String packageName = resolveInfo.activityInfo.packageName;
+            //
+            Drawable icon = resolveInfo.loadIcon(packageManager);
+            //
+            String appName = resolveInfo.loadLabel(packageManager).toString();
+            //
+            ShopInfoModel shopInfoModel = new ShopInfoModel();
+            shopInfoModel.setIconDraw(icon);
+            shopInfoModel.setName(appName);
+            shopInfoModels.add(shopInfoModel);
+        }
+        return shopInfoModels;
+    }
+
+
+    protected void initListView(){
         //
-        @SuppressLint("WrongViewCast") ListView listView = (ListView) findViewById(R.id.ListView_listView);
+        @SuppressLint("WrongViewCast") final ListView listView = (ListView) findViewById(R.id.ListView_listView);
 
         Intent intent = getIntent();
         String listViewAdapterType = intent.getStringExtra("ListViewAdapterType");
@@ -61,7 +102,7 @@ public class ListviewActivity extends AppCompatActivity {
             listView.setAdapter(simpleAdapter);
         }else if (listViewAdapterType.equals("BaseAdapter")){
 
-
+            //自定义的数据
             ArrayList<ShopInfoModel> shopInfoModels = new ArrayList<ShopInfoModel>();
             for(int i = 0;i < 30;i++){
                 ShopInfoModel shopInfoModel = new ShopInfoModel();
@@ -70,15 +111,47 @@ public class ListviewActivity extends AppCompatActivity {
                 shopInfoModel.setContent("content----" + i);
                 shopInfoModels.add(shopInfoModel);
             }
+            //获取手机安装的APP信息
+            shopInfoModels = getAllAppInfoModels();
             //
-            MyAdapter myAdapter = new MyAdapter();
+            final MyAdapter myAdapter = new MyAdapter();
             myAdapter.shopInfoModels = shopInfoModels;
             listView.setAdapter(myAdapter);
 
+
+            //item点击事件
+            final ArrayList<ShopInfoModel> finalShopInfoModels = shopInfoModels;
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                /*
+                *adapterView:ListView也可能不是
+                * view：当前行的item
+                * i:intex或者position
+                * l:
+                * */
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    String appName = finalShopInfoModels.get(i).getName();
+                    Toast.makeText(ListviewActivity.this,appName,Toast.LENGTH_SHORT);
+
+                }
+            });
+            //item长按事件
+            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    //删除数据
+                    finalShopInfoModels.remove(i);
+                    //刷新listView
+//                    listView.setAdapter(myAdapter);//此法不行，将会重新创建item视图对象
+                    myAdapter.notifyDataSetChanged();//使用所有缓存的item视图对象
+
+                    return true;
+                }
+            });
         }
 
     }
-
 
     //
     class MyAdapter extends BaseAdapter{//BaseAdapter为抽象类
@@ -120,10 +193,20 @@ public class ListviewActivity extends AppCompatActivity {
             ShopInfoModel shopInfoModel = shopInfoModels.get(i);
 
             icon.setImageResource(shopInfoModel.getIcon());
+            if (shopInfoModel.getIconDraw() != null){
+                icon.setImageDrawable(shopInfoModel.getIconDraw());
+            }
+
+            //
             name_textView.setText(shopInfoModel.getName());
             content_textView.setText(shopInfoModel.getContent());
 
             return view;
         }
     }
+
+
+
+
+
 }

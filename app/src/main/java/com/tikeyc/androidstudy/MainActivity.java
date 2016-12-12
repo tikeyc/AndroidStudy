@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.support.v7.app.AlertDialog;
 
+import com.tikeyc.androidstudy.ListAndGrid.GridViewActivity;
+import com.tikeyc.androidstudy.ListAndGrid.ListviewActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText textView1;
@@ -136,6 +139,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         })
                         .show();
+            }
+        });
+
+        //GridView
+        Button button5 = (Button) findViewById(R.id.main_button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //
+                Intent intent = new Intent(MainActivity.this,GridViewActivity.class);
+                startActivity(intent);
             }
         });
     }
