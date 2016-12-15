@@ -15,7 +15,7 @@ public class ShopInfoModel {
 
     private int icon;
     private String name;
-    protected String content;
+    private String content;
 
     private Drawable iconDraw;
 
