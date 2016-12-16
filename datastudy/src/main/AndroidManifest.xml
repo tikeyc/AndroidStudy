@@ -4,6 +4,8 @@
 
     <!-- SD卡权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--网络权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +24,19 @@
         <activity android:name=".FileActivity" />
         <activity android:name=".SdcardActivity" />
         <activity android:name=".SQliteActivity" />
-        <activity android:name=".SQliteDemo.SQliteDemoActivity"></activity>
+        <activity android:name=".SQliteDemo.SQliteDemoActivity" />
+        <activity android:name=".HttpActivity"></activity>
     </application>
+
+    <!--安装APK所需,还有file_paths.xml-->
+    <provider
+        android:name="android.support.v4.content.FileProvider"
+        android:authorities="com.tikeyc.datastudy.fileProvider"
+        android:grantUriPermissions="true"
+        android:exported="false">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+    </provider>
 
 </manifest>

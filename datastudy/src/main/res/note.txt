@@ -1,0 +1,10 @@
+Android Volley是Android平台上很好用的第三方开源网络通信框架。使用简答，功能强大。
+
+现在我把Android Volley的库jar包Volley.jar放出来供大家下载使用，下载连接地址：http://download.csdn.net/detail/zhangphil/9053413
+
+使用方法：下载Volley.jar后，直接放到Eclipse工程的libs目录下，刷新，然后就可以调用Android Volley了。
+
+附：
+
+Android Volley的技术文档主页：https://developer.android.com/training/volley/index.html
+Android Volley的开源代码库官方主页：https://android.googlesource.com/platform/frameworks/volley

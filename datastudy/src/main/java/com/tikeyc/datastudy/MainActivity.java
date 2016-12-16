@@ -62,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             }
             break;
             case R.id.button5:{
+                /**Http远程服务器存储   须在AndroidManifest.xml中设置网络权限：android.permission.INTERNET
+                 * JDK内置原生API：HttpUrlConnection
+                 * Android内置的包装API：HttpClient
+                 * 异步网络请求框架：Volley 、 Xutils
+                 * */
+                Intent intent = new Intent(this,HttpActivity.class);
+                startActivity(intent);
 
             }
             break;
