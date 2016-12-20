@@ -2,6 +2,7 @@ package com.tikeyc.datastudy;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
@@ -18,6 +19,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -102,8 +104,8 @@ public class HttpActivity extends AppCompatActivity {
                             progressDialog.incrementProgressBy(len);//在上一次进度上加载len
 
                             //模拟网速慢
-                            //Thread.sleep(100); 区别 此法内部实现try catch了
-//                            SystemClock.sleep(100);
+                            //Thread.sleep(50); 区别 此法内部实现try catch了
+//                            SystemClock.sleep(50);
                         }
 
                         fileOutputStream.close();
@@ -146,10 +148,12 @@ public class HttpActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
         //判断是否是AndroidN以及更高的版本
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            SystemClock.sleep(2000);
             intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             Uri contentUri = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".fileProvider", apkFilePath);
             intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
         } else {
+
             intent.setDataAndType(Uri.fromFile(apkFilePath), "application/vnd.android.package-archive");
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
@@ -395,6 +399,21 @@ public class HttpActivity extends AppCompatActivity {
 
                 //添加到队列中
                 requestQueue.add(stringRequest);
+
+                //
+                ImageRequest imageRequest = new ImageRequest("image_url", new Response.Listener<Bitmap>() {
+                    @Override
+                    public void onResponse(Bitmap bitmap) {
+
+                    }
+                }, 100, 100, null, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+                //添加到队列中
+                requestQueue.add(imageRequest);
 
             }
             break;

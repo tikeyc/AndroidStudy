@@ -1,1 +1,1 @@
-include ':app', ':datastudy', ':volley'
+include ':app', ':datastudy', ':volley', ':messageandthreadstudy', ':gson-2.3'

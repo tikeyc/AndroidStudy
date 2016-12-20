@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_handler_demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tikeyc.messageandthreadstudy.HandlerDemoActivity"
+    android:orientation="vertical" >
+
+    <TextView
+        android:text="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20pt"
+        android:textColor="#000fff"
+        android:id="@+id/handler_demo_textView1" />
+
+    <Button
+        android:text="自动增加"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/handler_demo_button1" />
+
+    <Button
+        android:text="自动减少"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/handler_demo_button2" />
+
+    <Button
+        android:text="暂停"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/handler_demo_button3" />
+</LinearLayout>
