@@ -29,6 +29,7 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
-    compile project(':volley')
     compile project(':gson-2.3')
+    compile project(':volley1')
+    compile project(':picasso-2.5.2')
 }

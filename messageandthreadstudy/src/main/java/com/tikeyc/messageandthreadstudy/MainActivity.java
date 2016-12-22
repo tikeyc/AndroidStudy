@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.tikeyc.messageandthreadstudy.ListView.ListViewActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
             break;
             case R.id.message_main_button4: {
                 Intent intent = new Intent(this,TestJsonActivity.class);
+                startActivity(intent);
+
+            }
+            break;
+            case R.id.message_main_button5: {
+                Intent intent = new Intent(this,ListViewActivity.class);
                 startActivity(intent);
 
             }

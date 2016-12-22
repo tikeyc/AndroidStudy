@@ -72,6 +72,7 @@ public class TestJsonActivity extends AppCompatActivity {
 
     /*将Json格式的字符串[]转换成Java对象的List，使用原生API
     * */
+
     public void testJsonToList1() throws JSONException {
         String jsonString = "[{\"id\": 2527484,\"level\": 62,\"gender\": 0,\"nick\": \"\uD83D\uDC2F。陆小曼\",\"portrait\": \"http://img2.inke.cn/MTQ4MjA2MDUyNzQ0MSMxODgjanBn.jpg\"}," +
                 "{\"id\": 7726608,\"level\": 49,\"gender\": 0,\"nick\": \"念小兮baby\",\"portrait\": \"http://img2.inke.cn/MTQ4MTgxODEwNTk4OSM2MTAjanBn.jpg\"}]";

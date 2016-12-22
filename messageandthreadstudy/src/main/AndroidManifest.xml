@@ -23,7 +23,8 @@
         <activity android:name=".TestHanderActivity" />
         <activity android:name=".HandlerDemoActivity" />
         <activity android:name=".AsyncTaskActivity" />
-        <activity android:name=".TestJsonActivity"></activity>
+        <activity android:name=".TestJsonActivity" />
+        <activity android:name=".ListView.ListViewActivity"></activity>
     </application>
 
 </manifest>

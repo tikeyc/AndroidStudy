@@ -1,1 +1,1 @@
-include ':app', ':datastudy', ':volley', ':messageandthreadstudy', ':gson-2.3'
+include ':app', ':datastudy', ':messageandthreadstudy', ':gson-2.3', ':volley1', ':picasso-2.5.2'

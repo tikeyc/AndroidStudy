@@ -42,4 +42,13 @@
         android:textAllCaps="false"
         android:onClick="onClickButtonAction"
         android:layout_marginTop="30dp" />
+
+    <Button
+        android:text="ListView Demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_main_button5"
+        android:onClick="onClickButtonAction"
+        android:textAllCaps="false"
+        android:layout_marginTop="40dp"/>
 </LinearLayout>
