@@ -30,6 +30,7 @@ public class MyImageView extends ImageView {
         return super.dispatchTouchEvent(ev);
     }
 
+
     /**处理事件，没有地方消费（不能完全说是处理）某个事件时最终由此处理，相当于备胎
      * 处理事件的回调方法
      * @param event
@@ -43,8 +44,10 @@ public class MyImageView extends ImageView {
 
     }
 
+
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         return super.dispatchKeyEvent(event);
     }
+
 }

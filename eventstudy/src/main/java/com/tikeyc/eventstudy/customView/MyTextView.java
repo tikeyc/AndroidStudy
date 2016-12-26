@@ -1,6 +1,7 @@
 package com.tikeyc.eventstudy.customView;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,5 +84,23 @@ public class MyTextView extends TextView {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
+    }
+
+
+    /**想当于iOS中的drawInRect()
+     * @param canvas 画布
+     */
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    }
+
+
+    /**
+     * 视图销毁时调用(视图从父视图中remove时、所在Activity销毁时)
+     */
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
     }
 }

@@ -9,6 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/gson-2.3/gson-2.3.iml" filepath="$PROJECT_DIR$/gson-2.3/gson-2.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/messageandthreadstudy/messageandthreadstudy.iml" filepath="$PROJECT_DIR$/messageandthreadstudy/messageandthreadstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/picasso-2.5.2/picasso-2.5.2.iml" filepath="$PROJECT_DIR$/picasso-2.5.2/picasso-2.5.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serviceclientstudy/serviceclientstudy.iml" filepath="$PROJECT_DIR$/serviceclientstudy/serviceclientstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serviceplaymusic/serviceplaymusic.iml" filepath="$PROJECT_DIR$/serviceplaymusic/serviceplaymusic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/servicestudy/servicestudy.iml" filepath="$PROJECT_DIR$/servicestudy/servicestudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley1/volley1.iml" filepath="$PROJECT_DIR$/volley1/volley1.iml" />
     </modules>
   </component>

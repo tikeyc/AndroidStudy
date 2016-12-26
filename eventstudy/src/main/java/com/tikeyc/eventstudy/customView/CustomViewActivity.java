@@ -28,7 +28,7 @@ public class CustomViewActivity extends AppCompatActivity {
         //2.1动态加载布局文件得到视图对象
 //        View view = View.inflate(this,R.layout.activity_custom_view,null);
         //2.2动态创建视图对象
-        MyTextView textView = new MyTextView(this);
+        final MyTextView textView = new MyTextView(this);
         textView.setText("custom view");
         textView.setBackgroundColor(Color.CYAN);
         setContentView(textView);
@@ -36,6 +36,16 @@ public class CustomViewActivity extends AppCompatActivity {
 
         //强制重写布局 相当于iOS中的setNeedLayout
         textView.requestLayout();
+        //强制重绘视图
+        textView.invalidate();//（只能在主线程执行）
+        textView.postInvalidate();//(在多线程执行)
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+//                textView.invalidate();//（只能在主线程执行）
+                textView.postInvalidate();//(在多线程执行)
+            }
+        });
     }
 
 
