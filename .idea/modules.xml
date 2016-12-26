@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/01app/01app.iml" filepath="$PROJECT_DIR$/01app/01app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02datastudy/02datastudy.iml" filepath="$PROJECT_DIR$/02datastudy/02datastudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03eventstudy/03eventstudy.iml" filepath="$PROJECT_DIR$/03eventstudy/03eventstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04messageandthreadstudy/04messageandthreadstudy.iml" filepath="$PROJECT_DIR$/04messageandthreadstudy/04messageandthreadstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05servicestudy/05servicestudy.iml" filepath="$PROJECT_DIR$/05servicestudy/05servicestudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06serviceclientstudy/06serviceclientstudy.iml" filepath="$PROJECT_DIR$/06serviceclientstudy/06serviceclientstudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07serviceplaymusic/07serviceplaymusic.iml" filepath="$PROJECT_DIR$/07serviceplaymusic/07serviceplaymusic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08broadcastreceiverstudy/08broadcastreceiverstudy.iml" filepath="$PROJECT_DIR$/08broadcastreceiverstudy/08broadcastreceiverstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidStudy.iml" filepath="$PROJECT_DIR$/AndroidStudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/datastudy/datastudy.iml" filepath="$PROJECT_DIR$/datastudy/datastudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eventstudy/eventstudy.iml" filepath="$PROJECT_DIR$/eventstudy/eventstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/gson-2.3/gson-2.3.iml" filepath="$PROJECT_DIR$/gson-2.3/gson-2.3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/messageandthreadstudy/messageandthreadstudy.iml" filepath="$PROJECT_DIR$/messageandthreadstudy/messageandthreadstudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/picasso-2.5.2/picasso-2.5.2.iml" filepath="$PROJECT_DIR$/picasso-2.5.2/picasso-2.5.2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/serviceclientstudy/serviceclientstudy.iml" filepath="$PROJECT_DIR$/serviceclientstudy/serviceclientstudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/serviceplaymusic/serviceplaymusic.iml" filepath="$PROJECT_DIR$/serviceplaymusic/serviceplaymusic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servicestudy/servicestudy.iml" filepath="$PROJECT_DIR$/servicestudy/servicestudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley1/volley1.iml" filepath="$PROJECT_DIR$/volley1/volley1.iml" />
     </modules>
   </component>
