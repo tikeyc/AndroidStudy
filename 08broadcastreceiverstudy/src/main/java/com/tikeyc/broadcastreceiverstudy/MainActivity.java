@@ -1,7 +1,9 @@
 package com.tikeyc.broadcastreceiverstudy;
 
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * 广播事件处理属于系统级别的事件处理
@@ -10,9 +12,48 @@ import android.os.Bundle;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private MyReceive1 myReceive1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+
+    public void onClickButtonAction (View view) {
+        switch (view.getId()) {
+            case R.id.main_button1:{//动态注册广播接收器
+                if (myReceive1 == null) {
+                    myReceive1 = new MyReceive1();
+                    IntentFilter intentFilter = new IntentFilter("com.tikeyc.broadcastreceiverstudy.MyReceiver.action");
+                    registerReceiver(myReceive1,intentFilter);
+                }
+
+            }
+            break;
+            case R.id.main_button2:{
+                if (myReceive1 != null) {
+                    unregisterReceiver(myReceive1);
+                    myReceive1 = null;
+                }
+
+
+            }
+            break;
+            default:
+                break;
+        }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (myReceive1 != null) {
+            unregisterReceiver(myReceive1);
+            myReceive1 = null;
+        }
     }
 }

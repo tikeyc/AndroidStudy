@@ -11,6 +11,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!--在AndroidManifest.xml中配置<servicer></servicer> 静态注册广播接收器-->
+        <receiver android:name=".MyReceive">
+            <intent-filter>
+                <action android:name="com.tikeyc.broadcastreceiverstudy.MyReceiver.action"></action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".MyReceive1">
+            <intent-filter>
+                <action android:name="com.tikeyc.broadcastreceiverstudy.MyReceiver.action1"></action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".MyReceive2">
+            <intent-filter>
+                <action android:name="com.tikeyc.broadcastreceiverstudy.MyReceiver.action1"></action>
+            </intent-filter>
+        </receiver>
+        <!--priority设置广播接收优先级-->
+        <receiver android:name=".MyReceive3">
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.tikeyc.broadcastreceiverstudy.MyReceiver.action1"></action>
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:name=".SmsReceiver" >
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+            </intent-filter>
+        </receiver>
     </application>
+
+
 
 </manifest>

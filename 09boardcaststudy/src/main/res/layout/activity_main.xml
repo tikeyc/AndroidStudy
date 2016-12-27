@@ -6,23 +6,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tikeyc.broadcastreceiverstudy.MainActivity"
+    tools:context="com.tikeyc.a09boardcaststudy.MainActivity"
     android:orientation="vertical" >
 
-
     <Button
-        android:text="动态注册广播接收器"
+        android:text="发送一段广播"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickButtonAction"
         android:id="@+id/main_button1" />
 
     <Button
-        android:text="解除注册广播接收器"
+        android:text="发送有序广播"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickButtonAction"
         android:id="@+id/main_button2" />
-
 
 </LinearLayout>
