@@ -47,6 +47,18 @@ public class MyAdapter extends BaseAdapter {
         int screenHeight = outMetrics.heightPixels;
     }
 
+
+    /**ViewHolder 视图的容器类
+     * ListView优化，优化findViewById()方法的调用次数
+     */
+    static class ViewHolder {
+        CircleImageView iconImgView;
+        TextView nickTV;
+        TextView cityTV;
+        TextView online_usersTV;
+        ImageView portraitImgView;
+    }
+
     @Override
     public int getCount() {
         return liveInfoModels.size();
@@ -65,31 +77,42 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
+        ViewHolder viewHolder = null;
         if (view == null) {
             view = View.inflate(context, R.layout.livelistitem,null);
             //自定义设置item的高度
             AbsListView.LayoutParams param = new AbsListView.LayoutParams(screenWidth - 100,screenWidth + 50);
             view.setLayoutParams(param);
+            //
+            CircleImageView iconImgView = (CircleImageView) view.findViewById(R.id.icon_imageView);
+            TextView nickTV = (TextView)  view.findViewById(R.id.nick_textView);
+            TextView cityTV = (TextView)  view.findViewById(R.id.city_textView);
+            TextView online_usersTV = (TextView)  view.findViewById(R.id.online_users_textView);
+            ImageView portraitImgView = (ImageView) view.findViewById(R.id.portrait_imageView);
+            //
+            viewHolder = new ViewHolder();
+            viewHolder.iconImgView = iconImgView;
+            viewHolder.nickTV = nickTV;
+            viewHolder.cityTV = cityTV;
+            viewHolder.online_usersTV = online_usersTV;
+            viewHolder.portraitImgView = portraitImgView;
+            //保存viewHolder到view
+            view.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) view.getTag();
         }
-
-        //
-        final CircleImageView iconImgView = (CircleImageView) view.findViewById(R.id.icon_imageView);
-        TextView nickTV = (TextView)  view.findViewById(R.id.nick_textView);
-        TextView cityTV = (TextView)  view.findViewById(R.id.city_textView);
-        TextView online_usersTV = (TextView)  view.findViewById(R.id.online_users_textView);
-        final ImageView portraitImgView = (ImageView) view.findViewById(R.id.portrait_imageView);
 
         //
         LiveInfoModel liveInfoModel = liveInfoModels.get(i);
         String imgUrl = "http://img.meelive.cn/" + liveInfoModel.creator.portrait;
         //Picasso加载图片
-        Picasso.with(context).load(imgUrl).placeholder(null).into(iconImgView);
+        Picasso.with(context).load(imgUrl).placeholder(null).into(viewHolder.iconImgView);
         //
-        nickTV.setText(liveInfoModel.creator.nick);
-        cityTV.setText(liveInfoModel.city);
-        online_usersTV.setText(liveInfoModel.online_users);
+        viewHolder.nickTV.setText(liveInfoModel.creator.nick);
+        viewHolder.cityTV.setText(liveInfoModel.city);
+        viewHolder.online_usersTV.setText(liveInfoModel.online_users);
         //Picasso加载图片
-        Picasso.with(context).load(imgUrl).placeholder(null).into(portraitImgView);
+        Picasso.with(context).load(imgUrl).placeholder(null).into(viewHolder.portraitImgView);
 
         return view;
     }
