@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_test_view_animation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tikeyc.a12animationstudy.TestViewAnimationActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+
+        <Button
+            android:textAllCaps="false"
+            android:text="Code Scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_scale_button"
+            android:onClick="onClickButtonAction"
+            android:layout_weight="1" />
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Xml Scale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xml_scale_button"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Code Rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_rotate_button"
+            android:layout_weight="1" />
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Xml Rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xml_rotate_button"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Code Alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_alpha_button"
+            android:layout_weight="1" />
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Xml Alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xml_alpha_button"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Code Translation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_translation_button"
+            android:layout_weight="1" />
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Xml Translation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xml_translation_button"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Code AnimationSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_animationSet_button"
+            android:layout_weight="1" />
+
+        <Button
+            android:onClick="onClickButtonAction"
+            android:textAllCaps="false"
+            android:text="Xml AnimationSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xml_animationSet_button"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/animation"
+        android:id="@+id/view_animation_imageView" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_animation_textView" />
+</LinearLayout>
