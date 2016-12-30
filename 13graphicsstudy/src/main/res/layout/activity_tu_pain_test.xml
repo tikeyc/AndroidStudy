@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tu_pain_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.tikeyc.a13graphicsstudy.TuPainTestActivity">
+
+    <Button
+        android:text="测试Bitmap"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/tu_pain_test_bitmap_button" />
+
+    <Button
+        android:text="测试图片的缩放等处理"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/tu_pain_test_scale_img_button" />
+
+    <Button
+        android:text="使用Shape做的按钮"
+        android:background="@drawable/shape_test"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/tu_pain_test_shape_button" />
+
+    <ImageView
+        android:background="@drawable/selector_drawble"
+        android:layout_gravity="center"
+        android:layout_width="52dp"
+        android:layout_height="64dp"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/tu_pain_test_selector_drawble_button" />
+
+    <Button
+        android:text="使用Selector+Shape做的按钮"
+        android:background="@drawable/selector_shape"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonAction"
+        android:id="@+id/tu_pain_test_selector_shape_button" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
+    <!--9patch图片 在sdk/tools/draw9patch中打开-->
+    <TextView
+        android:background="@drawable/seletor_normal"
+        android:layout_marginTop="20dp"
+        android:text=" TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+</LinearLayout>
+
+</ScrollView>

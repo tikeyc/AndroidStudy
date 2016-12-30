@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--设置圆角-->
+    <corners
+        android:radius="20dp">
+    </corners>
+
+    <!--边框-->
+    <stroke
+        android:width="5dp"
+        android:color="#000000"
+        android:dashWidth="10dp"
+        android:dashGap="2dp">
+    </stroke>
+
+    <!--尺寸-->
+    <size
+        android:width="200dp"
+        android:height="44dp">
+    </size>
+
+    <!--内边距-->
+    <padding
+        android:bottom="0dp">
+    </padding>
+
+    <!--内部单色填充-->
+    <solid
+        android:color="#ff0000">
+    </solid>
+
+    <!--渐变色填充-->
+    <gradient
+        android:startColor="#0000ff"
+        android:centerColor="#ffffff"
+        android:endColor="#ffff00"
+        android:angle="90">
+    </gradient>
+
+</shape>
