@@ -5,8 +5,9 @@ Android studio Mac环境搭建
 http://www.androiddevtools.cn/     
 http://www.android-studio.org/
 
-学习笔记 详细笔记见http://blog.csdn.net/u012847940/article/details/53286817#t7                
-我的Android第一个简单项目，应该说是Demo：https://github.com/tikeyc/Android_MobilePlayer       
+学习笔记 详细笔记见http://blog.csdn.net/u012847940/article/details/53286817#t7         
+       
+我的Android第一个简单项目，应该说是Demo：https://github.com/tikeyc/Android_MobilePlayer              
 常见异常：       
     1.NullPointerException  空指针（iOS我常称为 野指针）   
     原因：调用对象的方法/属性 但对象为null    
